@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+
+Resources:
+  ReadTable:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: counter.lambda_handler
+      Runtime: python3.8
+      CodeUri: ./Lambda
+      Description: 'SAM-Lambda to call/update Visitor Count'
+      Role: 'arn:aws:iam::952017592745:role/service-role/SAMDynamoRead'
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /count
+            Method: get
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref VisitorsTable
+
+  VisitorsTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+        Name: id
+        Type: String
+
+Outputs:
+  HelloWorldApi:
+    Description: "API Gateway endpoint URL for Count Function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/count/"
