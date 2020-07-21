@@ -3,8 +3,9 @@
 name: Deploy Backend SAM
 
 on:
-    push: 
-        branch: master 
+  push:
+    branches:
+    - master
 
 job:
     my-job:
