@@ -19,3 +19,5 @@ jobs:
         python-version: 3.8
     - name: Install moto boto3
       run: pip install moto boto3
+    - name: Try test
+      run: python3 Lambda/test_counter.py
