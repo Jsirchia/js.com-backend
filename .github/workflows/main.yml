@@ -14,10 +14,6 @@ jobs:
     - name: Checkout branch
       uses: actions/checkout@v2
     - name: Set Up Python
-    - uses: actions/setup-python@v2
+      uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    - name: Install Dependencies
-      run: pip install moto boto3
-    - name: Run Test
-      run: python3.8 Lambda/test_counter.py
