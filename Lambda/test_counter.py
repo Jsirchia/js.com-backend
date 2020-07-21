@@ -10,6 +10,7 @@ def aws_credentials():
     os.environ['AWS_SECURITY_TOKEN'] = 'testing'
     os.environ['AWS_SESSION_TOKEN'] = 'testing'
     os.environ['TABLE_NAME'] = 'testing'
+    os.environ['AWS_DEFAULT_REGION'] = 'us-east-1'
 
 @mock_dynamodb2
 class TestLambdaDDB(unittest.TestCase):
