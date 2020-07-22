@@ -18,7 +18,10 @@ jobs:
       with:
         python-version: 3.*
     - name: Install moto boto3
-      run: pip install moto boto3
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r Lambda/requirements.txt
+        pip install moto boto3
     - name: Try test
       run: python3 Lambda/test_counter.py
     - name: Configure AWS credentials
