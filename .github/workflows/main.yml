@@ -16,7 +16,7 @@ jobs:
     - name: Set Up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.*
     - name: Install moto boto3
       run: pip install moto boto3
     - name: Try test
