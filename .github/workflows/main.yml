@@ -31,10 +31,10 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
     - name: SAM BUILD
-      uses: TractorZoom/sam-cli-action@master
-      with:
-        sam_command: "build --use-container"
+      uses: tkt-actions/aws-sam-cli@v1
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      with:
+        cmd: "sam --version"
