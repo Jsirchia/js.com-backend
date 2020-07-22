@@ -2,7 +2,6 @@ import json
 import os
 import boto3
 
-#print("heres your shit:")
 #os.environ['TABLE_NAME'] = 'testing'
 #print(os.environ["TABLE_NAME"])
     
