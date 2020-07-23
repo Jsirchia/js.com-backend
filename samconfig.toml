@@ -6,6 +6,6 @@ stack_name = "MyWebsite-Backend"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-vtp32py7iex1"
 s3_prefix = "MyWebsite-Backend"
 region = "us-east-1"
-confirm_changeset = true
+confirm_changeset = false
 capabilities = "CAPABILITY_IAM"
 
