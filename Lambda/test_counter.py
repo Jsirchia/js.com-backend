@@ -22,7 +22,7 @@ class TestLambdaDDB(unittest.TestCase):
         ddbTableName = os.environ['TABLE_NAME']
     
         # Create mock table
-        dynamodb.create_table(   #took away table= from front 
+        dynamodb.create_table( 
           TableName = ddbTableName,
           BillingMode='PAY_PER_REQUEST',
           AttributeDefinitions=[
